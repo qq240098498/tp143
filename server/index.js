@@ -120,6 +120,92 @@ app.get('/api/standings', (req, res) => {
   res.json(api.computeTable({ keyword: api.readQuery(req.query, 'keyword') }));
 });
 
+// 裁判名单：登记、修改、停派复岗与删除；清单里带每人已派场次与数量
+app.get('/api/referees', (req, res) => {
+  res.json(api.listReferees({
+    keyword: api.readQuery(req.query, 'keyword'),
+    status: api.readQuery(req.query, 'status'),
+    level: api.readQuery(req.query, 'level'),
+  }));
+});
+
+app.post('/api/referees', (req, res) => {
+  try {
+    res.status(201).json(api.createReferee(req.body));
+  } catch (err) {
+    sendError(res, err);
+  }
+});
+
+app.patch('/api/referees/:id', (req, res) => {
+  try {
+    res.json(api.updateReferee(req.params.id, req.body));
+  } catch (err) {
+    sendError(res, err);
+  }
+});
+
+// 停派/复岗：停派时把名下未吹的场次一并带回，页面逐场改派
+app.post('/api/referees/:id/status', (req, res) => {
+  try {
+    res.json(api.setRefereeStatus(req.params.id, req.body || {}));
+  } catch (err) {
+    sendError(res, err);
+  }
+});
+
+app.delete('/api/referees/:id', (req, res) => {
+  try {
+    res.json(api.deleteReferee(req.params.id));
+  } catch (err) {
+    sendError(res, err);
+  }
+});
+
+// 派场：逐场列出主裁与两名助理，未配齐与已开赛缺口单列提醒
+app.get('/api/appointments', (req, res) => {
+  res.json(api.listAppointments({
+    round: api.readQuery(req.query, 'round'),
+    status: api.readQuery(req.query, 'status'),
+    keyword: api.readQuery(req.query, 'keyword'),
+  }));
+});
+
+// 配齐抽屉里的候选人：逐槽位标出能否选择、同日撞场、季上限与相邻天提示
+app.get('/api/appointments/:id/options', (req, res) => {
+  try {
+    res.json(api.matchOptions(req.params.id));
+  } catch (err) {
+    sendError(res, err);
+  }
+});
+
+// 一次性配齐一场的三名裁判
+app.post('/api/appointments/:id', (req, res) => {
+  try {
+    res.json(api.assignMatch(req.params.id, req.body || {}));
+  } catch (err) {
+    sendError(res, err);
+  }
+});
+
+// 单槽改派：写清换成谁与原因，原场次与新场次都留痕
+app.post('/api/appointments/:id/reassign', (req, res) => {
+  try {
+    res.json(api.reassignSlot(req.params.id, req.body || {}));
+  } catch (err) {
+    sendError(res, err);
+  }
+});
+
+// 配齐与改派的留痕
+app.get('/api/logs', (req, res) => {
+  res.json(api.listLogs({
+    matchId: api.readQuery(req.query, 'matchId'),
+    refereeId: api.readQuery(req.query, 'refereeId'),
+  }));
+});
+
 app.use('/api', (_req, res) => {
   res.status(404).json({ error: { code: 'API_NOT_FOUND', message: '接口不存在', field: '' } });
 });

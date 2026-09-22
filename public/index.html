@@ -21,7 +21,9 @@
         <button type="button" class="nav-item is-active" data-view="overview"><span>概览</span><em>全局</em></button>
         <button type="button" class="nav-item" data-view="teams"><span>球队</span><em id="nav-teams">0</em></button>
         <button type="button" class="nav-item" data-view="venues"><span>场地</span><em id="nav-venues">0</em></button>
+        <button type="button" class="nav-item" data-view="referees"><span>裁判</span><em id="nav-referees">0</em></button>
         <button type="button" class="nav-item" data-view="matches"><span>赛程</span><em id="nav-matches">0</em></button>
+        <button type="button" class="nav-item" data-view="appointments"><span>派场</span><em id="nav-appointments">0</em></button>
         <button type="button" class="nav-item" data-view="table"><span>积分榜</span><em>名次</em></button>
       </nav>
 
@@ -44,6 +46,7 @@
 
       <section class="view is-active" id="view-overview">
         <div class="stat-row" id="stat-row"></div>
+        <div class="gap-banner" id="gap-banner" hidden></div>
         <div class="split">
           <article class="card">
             <header class="card-head"><h2>最近赛果</h2><span class="hint">按日期倒序取最近五场</span></header>
@@ -88,6 +91,34 @@
         <p class="empty" id="venue-empty">没有符合条件的场地</p>
       </section>
 
+      <section class="view" id="view-referees">
+        <div class="toolbar">
+          <div class="segmented" id="referee-status-filter">
+            <button type="button" class="is-active" data-value="">全部</button>
+            <button type="button" data-value="在岗">在岗</button>
+            <button type="button" data-value="停派">停派</button>
+          </div>
+          <div class="segmented" id="referee-level-filter">
+            <button type="button" class="is-active" data-value="">全部级别</button>
+            <button type="button" data-value="主裁">主裁</button>
+            <button type="button" data-value="助理">助理</button>
+          </div>
+          <input id="referee-keyword" placeholder="搜裁判姓名" maxlength="24">
+          <button type="button" class="ghost" id="referee-search">查询</button>
+        </div>
+        <article class="card">
+          <table class="grid">
+            <thead>
+              <tr>
+                <th>姓名</th><th>级别</th><th>本季已派 / 上限</th><th>剩余</th><th>未吹场次</th><th>状态</th><th>备注</th><th></th>
+              </tr>
+            </thead>
+            <tbody id="referee-rows"></tbody>
+          </table>
+          <p class="empty" id="referee-empty">没有符合条件的裁判</p>
+        </article>
+      </section>
+
       <section class="view" id="view-matches">
         <div class="toolbar">
           <div class="chips" id="round-chips"></div>
@@ -111,6 +142,40 @@
             <tbody id="match-rows"></tbody>
           </table>
           <p class="empty" id="match-empty">没有符合条件的赛程</p>
+        </article>
+      </section>
+
+      <section class="view" id="view-appointments">
+        <div class="toolbar">
+          <div class="chips" id="appoint-round-chips"></div>
+          <select id="appoint-status">
+            <option value="">全部场次</option>
+            <option value="待赛">待赛</option>
+            <option value="延期">延期</option>
+            <option value="已赛">已赛</option>
+          </select>
+          <input id="appoint-keyword" placeholder="搜球队名" maxlength="24">
+          <button type="button" class="ghost" id="appoint-search">查询</button>
+          <button type="button" class="ghost" id="appoint-logs">改派记录</button>
+        </div>
+        <div class="gap-banner" id="appoint-urgent" hidden></div>
+        <article class="card">
+          <header class="card-head">
+            <h2>派不满的比赛</h2>
+            <span class="hint" id="appoint-gap-hint"></span>
+          </header>
+          <ul class="gap-list" id="appoint-gaps"></ul>
+        </article>
+        <article class="card" style="margin-top:12px">
+          <table class="grid">
+            <thead>
+              <tr>
+                <th>轮次</th><th>日期/时刻</th><th>对阵</th><th>主裁</th><th>助理一</th><th>助理二</th><th>提示</th><th></th>
+              </tr>
+            </thead>
+            <tbody id="appoint-rows"></tbody>
+          </table>
+          <p class="empty" id="appoint-empty">没有符合条件的赛程</p>
         </article>
       </section>
 
@@ -142,7 +207,7 @@
       <button type="button" class="icon" id="drawer-close">×</button>
     </header>
     <form id="drawer-form" autocomplete="off"></form>
-    <footer class="drawer-foot">
+    <footer class="drawer-foot" id="drawer-foot">
       <button type="button" class="primary" id="drawer-submit">保存</button>
       <button type="button" class="ghost" id="drawer-cancel">取消</button>
     </footer>

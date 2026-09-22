@@ -1,7 +1,8 @@
 const crypto = require('crypto');
-const { load, save, MAX_NOTE, MATCH_STATUS } = require('./store');
+const { load, save, MAX_NOTE, MATCH_STATUS, APPOINT_SLOTS } = require('./store');
 const { ApiError, pickText } = require('./errors');
 const { nameMaps } = require('./standings');
+const { isComplete, slotMapOf, findDateMoveClashes } = require('./appointments');
 
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
 const TIME_PATTERN = /^([01]\d|2[0-3]):[0-5]\d$/;
@@ -108,6 +109,28 @@ function validatePayload(input, data, selfId) {
       const venue = data.venues.find((item) => item.id === resolved);
       throw new ApiError(409, 'VENUE_TIME_CONFLICT', `${date} 这天 ${venue ? venue.name : '这块场地'} 的 ${clash.kickoff} 已经有一场了，两场之间至少隔两小时`, 'kickoff');
     }
+  }
+
+  // 已经排好的裁判不能因为改期在同一天撞上别的场次
+  if (selfId) {
+    const stored = data.matches.find((item) => item.id === selfId);
+    if (stored && stored.date !== date && data.appointments.some((item) => item.matchId === selfId)) {
+      const moveClashes = findDateMoveClashes(data, selfId, date);
+      if (moveClashes.length > 0) {
+        const text = moveClashes.map((item) => `${item.refereeName}（${item.slot}）与第 ${item.otherMatch ? item.otherMatch.round : '?'} 轮撞场`).join('、');
+        throw new ApiError(409, 'REFEREE_DATE_MOVE_CONFLICT', `改到 ${date} 后，${text}，同一天不能吹两场，请先改派再改期`, 'date');
+      }
+    }
+  }
+
+  // 不能出现比赛已经打完（或开赛）却没有配齐裁判的状态
+  if ((status === '已赛') && selfId && !isComplete(data, selfId)) {
+    const taken = slotMapOf(data, selfId);
+    const missing = APPOINT_SLOTS.filter((slot) => !taken.has(slot)).join('、');
+    throw new ApiError(409, 'OFFICIALS_NOT_READY', `这场还没配齐裁判（缺：${missing}），配齐之后才能登记比分`, 'status');
+  }
+  if (status === '已赛' && !selfId) {
+    throw new ApiError(409, 'OFFICIALS_NOT_READY', '新增赛程不能直接标成已赛：先建成待赛，配齐主裁与助理后再登记比分', 'status');
   }
 
   return {
@@ -232,6 +255,9 @@ function deleteMatch(id) {
   const index = data.matches.findIndex((item) => item.id === id);
   if (index === -1) throw new ApiError(404, 'MATCH_NOT_FOUND', '这场赛程不存在或已被删除', '');
   const [removed] = data.matches.splice(index, 1);
+  // 比赛删了，这场的派场与留痕一并清掉，不留指向空场次的记录
+  data.appointments = data.appointments.filter((item) => item.matchId !== id);
+  data.logs = data.logs.filter((item) => item.matchId !== id);
   save(data);
   return { id: removed.id, round: removed.round };
 }
