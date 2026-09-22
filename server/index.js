@@ -120,6 +120,71 @@ app.get('/api/standings', (req, res) => {
   res.json(api.computeTable({ keyword: api.readQuery(req.query, 'keyword') }));
 });
 
+// 裁判名册
+app.get('/api/referees', (req, res) => {
+  res.json(api.listReferees({
+    keyword: api.readQuery(req.query, 'keyword'),
+    status: api.readQuery(req.query, 'status'),
+  }));
+});
+
+app.post('/api/referees', (req, res) => {
+  try {
+    res.status(201).json(api.createReferee(req.body));
+  } catch (err) {
+    sendError(res, err);
+  }
+});
+
+app.patch('/api/referees/:id', (req, res) => {
+  try {
+    res.json(api.updateReferee(req.params.id, req.body));
+  } catch (err) {
+    sendError(res, err);
+  }
+});
+
+app.delete('/api/referees/:id', (req, res) => {
+  try {
+    res.json(api.deleteReferee(req.params.id));
+  } catch (err) {
+    sendError(res, err);
+  }
+});
+
+// 派场：看板、整场派场、单处改派、按人清单、改派留痕
+app.get('/api/assignments', (req, res) => {
+  res.json(api.listAssignmentBoard({ round: api.readQuery(req.query, 'round') }));
+});
+
+app.put('/api/matches/:id/assignments', (req, res) => {
+  try {
+    res.json(api.assignMatch(req.params.id, req.body));
+  } catch (err) {
+    sendError(res, err);
+  }
+});
+
+app.post('/api/matches/:id/reassign', (req, res) => {
+  try {
+    res.json(api.reassignSlot(req.params.id, req.body));
+  } catch (err) {
+    sendError(res, err);
+  }
+});
+
+app.get('/api/referees/:id/schedule', (req, res) => {
+  try {
+    res.json(api.refereeSchedule(req.params.id));
+  } catch (err) {
+    sendError(res, err);
+  }
+});
+
+app.get('/api/assignment-logs', (_req, res) => {
+  res.json(api.listAssignmentLogs());
+});
+
 app.use('/api', (_req, res) => {
   res.status(404).json({ error: { code: 'API_NOT_FOUND', message: '接口不存在', field: '' } });
 });

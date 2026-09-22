@@ -22,6 +22,8 @@
         <button type="button" class="nav-item" data-view="teams"><span>球队</span><em id="nav-teams">0</em></button>
         <button type="button" class="nav-item" data-view="venues"><span>场地</span><em id="nav-venues">0</em></button>
         <button type="button" class="nav-item" data-view="matches"><span>赛程</span><em id="nav-matches">0</em></button>
+        <button type="button" class="nav-item" data-view="referees"><span>裁判</span><em id="nav-referees">0</em></button>
+        <button type="button" class="nav-item" data-view="assignments"><span>派场</span><em id="nav-assignments">0</em></button>
         <button type="button" class="nav-item" data-view="table"><span>积分榜</span><em>名次</em></button>
       </nav>
 
@@ -105,12 +107,59 @@
           <table class="grid">
             <thead>
               <tr>
-                <th>轮次</th><th>日期</th><th>时刻</th><th>主队</th><th>比分</th><th>客队</th><th>场地</th><th>状态</th><th>备注</th><th></th>
+                <th>轮次</th><th>日期</th><th>时刻</th><th>主队</th><th>比分</th><th>客队</th><th>场地</th><th>裁判组</th><th>状态</th><th>备注</th><th></th>
               </tr>
             </thead>
             <tbody id="match-rows"></tbody>
           </table>
           <p class="empty" id="match-empty">没有符合条件的赛程</p>
+        </article>
+      </section>
+
+      <section class="view" id="view-referees">
+        <div class="toolbar">
+          <div class="segmented" id="referee-status-filter">
+            <button type="button" class="is-active" data-value="">全部</button>
+            <button type="button" data-value="在册">在册</button>
+            <button type="button" data-value="停用">停用</button>
+          </div>
+          <input id="referee-keyword" placeholder="搜姓名、级别或备注" maxlength="12">
+          <button type="button" class="ghost" id="referee-search">查询</button>
+          <span class="hint" id="referee-limit-hint"></span>
+        </div>
+        <article class="card">
+          <table class="grid">
+            <thead>
+              <tr>
+                <th>姓名</th><th>级别</th><th>本季已派</th><th>剩余名额</th><th>状态</th><th>备注</th><th></th>
+              </tr>
+            </thead>
+            <tbody id="referee-rows"></tbody>
+          </table>
+          <p class="empty" id="referee-empty">没有符合条件的裁判</p>
+        </article>
+      </section>
+
+      <section class="view" id="view-assignments">
+        <div class="toolbar">
+          <div class="chips" id="assign-round-chips"></div>
+          <button type="button" class="ghost" id="assign-log-toggle">改派记录</button>
+        </div>
+        <div class="alert-row" id="crew-alert"></div>
+        <article class="card assign-board-card">
+          <table class="grid assign-grid">
+            <thead>
+              <tr>
+                <th>轮次</th><th>日期</th><th>时刻</th><th>对阵</th><th>状态</th><th>主裁</th><th>助理一</th><th>助理二</th><th></th>
+              </tr>
+            </thead>
+            <tbody id="assign-rows"></tbody>
+          </table>
+          <p class="empty" id="assign-empty">没有需要派场的赛程</p>
+        </article>
+        <article class="card assign-log-card" id="assign-log-card" hidden>
+          <header class="card-head"><h2>改派留痕</h2><span class="hint">派场、改派与撤场都记在这里，新的在前</span></header>
+          <ul class="feed" id="assign-log-list"></ul>
         </article>
       </section>
 

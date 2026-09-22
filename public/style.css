@@ -206,3 +206,52 @@ table.grid.standings td:nth-child(n+3) { font-family: Consolas, "Courier New", m
 }
 .toast.ok { background: var(--brand); }
 .toast.bad { background: var(--danger); }
+
+/* 裁判与派场 */
+.pill.lvl-top { background: #e7e0f7; color: #6236a8; }
+.pill.lvl-mid { background: var(--brand-soft); color: var(--brand); }
+.pill.lvl-low { background: #eef2f7; color: var(--ink-soft); }
+.pill.role-head { background: #e7e0f7; color: #6236a8; }
+.pill.role-asst { background: #e8f0fb; color: #2a6496; }
+.count-hot { color: var(--danger); font-weight: 700; }
+
+.alert-row { margin-bottom: 12px; display: flex; flex-direction: column; gap: 8px; }
+.alert {
+  display: flex; align-items: baseline; gap: 12px; padding: 10px 14px; border-radius: var(--radius);
+  border: 1px solid; font-size: 13px;
+}
+.alert strong { font-size: 13.5px; white-space: nowrap; }
+.alert.warn { background: var(--amber-soft); border-color: #eed9af; color: #7a5208; }
+.alert.warn span { color: #8a6517; }
+.alert.ok { background: var(--brand-soft); border-color: #bfe0da; color: var(--brand); }
+.alert.ok span { color: #3d7a72; }
+
+.assign-grid td, .assign-grid th { font-size: 12.5px; padding: 8px 8px; }
+tr.crew-missing { background: #fffaf1; }
+tr.crew-missing:hover { background: #fdf4e4; }
+.crew-empty { color: var(--danger); font-size: 12px; background: var(--danger-soft); border-radius: 6px; padding: 1px 7px; white-space: nowrap; }
+.crew-person { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+.crew-person em { font-style: normal; font-size: 10.5px; color: var(--ink-soft); background: #f1f4f8; border-radius: 5px; padding: 0 5px; }
+.crew-person.role-head { font-weight: 600; }
+.crew-ok { font-size: 12px; color: var(--brand); background: var(--brand-soft); border-radius: 6px; padding: 1px 7px; white-space: nowrap; }
+button.crew-gap { padding: 2px 8px; }
+.flag-line { margin-top: 3px; font-size: 11px; color: var(--amber); }
+.warn-text { color: var(--amber); font-size: 12px; }
+.warn-list { margin: 0; padding-left: 18px; color: var(--amber); font-size: 12.5px; }
+.warn-list li { margin: 2px 0; }
+
+button.ghost.is-active { border-color: var(--brand); background: var(--brand-soft); color: var(--brand); }
+
+/* 按人派场清单 */
+.sched-head { display: flex; flex-direction: column; gap: 4px; padding: 10px 12px; background: #f7fafc; border-radius: 10px; }
+.sched-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.sched-list li { border: 1px solid var(--line); border-radius: 10px; padding: 9px 11px; display: flex; flex-direction: column; gap: 6px; }
+.sched-list li.consecutive { border-color: #eed9af; background: var(--amber-soft); }
+.sched-main { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 12.5px; }
+.sched-sub { display: flex; align-items: center; gap: 10px; }
+
+/* 改派留痕 */
+#assign-log-card { margin-top: 14px; }
+#assign-log-list .log-body { flex: 1; min-width: 0; }
+#assign-log-list .log-meta { white-space: nowrap; font-size: 11.5px; }
+.assign-log-card .feed li { align-items: flex-start; }

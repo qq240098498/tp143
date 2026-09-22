@@ -2,6 +2,7 @@ const crypto = require('crypto');
 const { load, save, MAX_NOTE, MATCH_STATUS } = require('./store');
 const { ApiError, pickText } = require('./errors');
 const { nameMaps } = require('./standings');
+const { requireCrewComplete, matchLabel } = require('./assignments');
 
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
 const TIME_PATTERN = /^([01]\d|2[0-3]):[0-5]\d$/;
@@ -110,6 +111,25 @@ function validatePayload(input, data, selfId) {
     }
   }
 
+  // 已经派了裁判的场次改日期，不能把裁判改到同一天的另一场里
+  if (selfId) {
+    const crewIds = new Set(data.assignments.filter((item) => item.matchId === selfId).map((item) => item.refereeId));
+    for (const refereeId of crewIds) {
+      const blocker = data.assignments.find((other) => other.matchId !== selfId && other.refereeId === refereeId);
+      if (!blocker) continue;
+      const blockerMatch = data.matches.find((m) => m.id === blocker.matchId);
+      if (blockerMatch && blockerMatch.date === date && blockerMatch.status !== '取消') {
+        const referee = data.referees.find((item) => item.id === refereeId);
+        throw new ApiError(409, 'CREW_DATE_CONFLICT', `改到 ${date} 后，${referee ? referee.name : '有裁判'} 同一天还要吹「${matchLabel(data, blockerMatch)}」，请先改派再改期`, 'date');
+      }
+    }
+  }
+
+  // 开赛哨兵：要标成已赛，主裁与两名助理必须先派齐
+  if (status === '已赛') {
+    requireCrewComplete(data, { id: selfId, ...candidate });
+  }
+
   return {
     round,
     date,
@@ -124,7 +144,7 @@ function validatePayload(input, data, selfId) {
   };
 }
 
-function decorate(match, teams, venues) {
+function decorate(match, data, teams, venues) {
   const home = teams.get(match.homeTeamId);
   const away = teams.get(match.awayTeamId);
   const venue = venues.get(resolveVenueId(match, { teams: Array.from(teams.values()), venues: Array.from(venues.values()) }));
@@ -135,6 +155,14 @@ function decorate(match, teams, venues) {
     else if (match.homeGoals < match.awayGoals) winner = away ? away.name : '';
     else winner = '平局';
   }
+  // 附上裁判组齐整情况，赛程清单据此提醒哪场还没派满
+  const crew = data.assignments.filter((item) => item.matchId === match.id);
+  const headRow = crew.find((item) => item.role === '主裁');
+  const assistantRows = crew.filter((item) => item.role === '助理');
+  const refereeName = (row) => {
+    const referee = data.referees.find((item) => item.id === row.refereeId);
+    return referee ? referee.name : '';
+  };
   return {
     ...match,
     homeName: home ? home.name : '未知球队',
@@ -144,6 +172,9 @@ function decorate(match, teams, venues) {
     venueName: venue ? venue.name : '未指定',
     scoreText,
     winner,
+    crewHeadName: headRow ? refereeName(headRow) : '',
+    crewAssistantNames: assistantRows.map(refereeName),
+    crewComplete: Boolean(headRow) && assistantRows.length >= 2,
   };
 }
 
@@ -179,7 +210,7 @@ function listMatches(options) {
   }));
 
   return {
-    matches: list.map((item) => decorate(item, teams, venues)),
+    matches: list.map((item) => decorate(item, data, teams, venues)),
     total: data.matches.length,
     filtered: list.length,
     rounds: roundSummaries,
@@ -195,7 +226,7 @@ function createMatch(payload) {
   data.matches.push(created);
   save(data);
   const { teams, venues } = nameMaps();
-  return decorate(created, teams, venues);
+  return decorate(created, data, teams, venues);
 }
 
 function updateMatch(id, payload) {
@@ -214,7 +245,7 @@ function updateMatch(id, payload) {
   found.updatedAt = new Date().toISOString();
   save(data);
   const { teams, venues } = nameMaps();
-  return decorate(found, teams, venues);
+  return decorate(found, data, teams, venues);
 }
 
 // 单独登记比分：登记完自动把这场标成已赛
@@ -232,6 +263,8 @@ function deleteMatch(id) {
   const index = data.matches.findIndex((item) => item.id === id);
   if (index === -1) throw new ApiError(404, 'MATCH_NOT_FOUND', '这场赛程不存在或已被删除', '');
   const [removed] = data.matches.splice(index, 1);
+  // 赛程没了，挂在它上面的派场一并清掉；改派留痕是历史快照，仍然保留
+  data.assignments = data.assignments.filter((item) => item.matchId !== id);
   save(data);
   return { id: removed.id, round: removed.round };
 }

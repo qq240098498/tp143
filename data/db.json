@@ -1,0 +1,1173 @@
+{
+  "meta": {
+    "season": "2026 春季联赛",
+    "points": {
+      "win": 3,
+      "draw": 1,
+      "loss": 0
+    },
+    "updatedAt": "2026-02-20T02:00:00.000Z"
+  },
+  "teams": [
+    {
+      "id": "team-1001",
+      "name": "江城铁马",
+      "shortName": "JCTM",
+      "city": "江城",
+      "venueId": "venue-2001",
+      "seedRank": 1,
+      "status": "参赛",
+      "note": "上赛季冠军",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "team-1002",
+      "name": "海陵海燕",
+      "shortName": "HLHY",
+      "city": "海陵",
+      "venueId": "venue-2002",
+      "seedRank": 2,
+      "status": "参赛",
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "team-1003",
+      "name": "云岭苍狼",
+      "shortName": "YLCW",
+      "city": "云岭",
+      "venueId": "venue-2003",
+      "seedRank": 3,
+      "status": "参赛",
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "team-1004",
+      "name": "平原飞驰",
+      "shortName": "PYFC",
+      "city": "平原",
+      "venueId": "venue-2004",
+      "seedRank": 4,
+      "status": "参赛",
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "team-1005",
+      "name": "沙洲锚队",
+      "shortName": "SZMD",
+      "city": "沙洲",
+      "venueId": "venue-2004",
+      "seedRank": 5,
+      "status": "参赛",
+      "note": "与平原飞驰共用中立体育场",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "team-1006",
+      "name": "白鹿白鹭",
+      "shortName": "BLBL",
+      "city": "白鹿",
+      "venueId": "venue-2004",
+      "seedRank": 6,
+      "status": "参赛",
+      "note": "与平原飞驰共用中立体育场",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "team-1007",
+      "name": "青峰青松",
+      "shortName": "QFQS",
+      "city": "青峰",
+      "venueId": "venue-2005",
+      "seedRank": 7,
+      "status": "参赛",
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "team-1008",
+      "name": "洛水洛神",
+      "shortName": "LSLS",
+      "city": "洛水",
+      "venueId": "venue-2006",
+      "seedRank": 8,
+      "status": "参赛",
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    }
+  ],
+  "venues": [
+    {
+      "id": "venue-2001",
+      "name": "江城体育中心",
+      "city": "江城",
+      "capacity": 32000,
+      "weekdays": [
+        6
+      ],
+      "note": "主场馆",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "venue-2002",
+      "name": "海陵湾球场",
+      "city": "海陵",
+      "capacity": 18000,
+      "weekdays": [
+        6
+      ],
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "venue-2003",
+      "name": "云岭高地",
+      "city": "云岭",
+      "capacity": 12000,
+      "weekdays": [
+        6,
+        0
+      ],
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "venue-2004",
+      "name": "中立体育场",
+      "city": "中立",
+      "capacity": 24000,
+      "weekdays": [
+        6,
+        0
+      ],
+      "note": "平原、沙洲、白鹿三家共用",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "venue-2005",
+      "name": "青峰山球场",
+      "city": "青峰",
+      "capacity": 9000,
+      "weekdays": [
+        0
+      ],
+      "note": "只有周日可用",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "venue-2006",
+      "name": "洛水古渡球场",
+      "city": "洛水",
+      "capacity": 8000,
+      "weekdays": [
+        6
+      ],
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    }
+  ],
+  "matches": [
+    {
+      "id": "match-3001-01",
+      "round": 1,
+      "date": "2026-03-07",
+      "kickoff": "15:30",
+      "venueId": "",
+      "homeTeamId": "team-1001",
+      "awayTeamId": "team-1008",
+      "status": "已赛",
+      "homeGoals": 2,
+      "awayGoals": 0,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-02",
+      "round": 1,
+      "date": "2026-03-07",
+      "kickoff": "19:30",
+      "venueId": "",
+      "homeTeamId": "team-1007",
+      "awayTeamId": "team-1002",
+      "status": "已赛",
+      "homeGoals": 1,
+      "awayGoals": 1,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-03",
+      "round": 1,
+      "date": "2026-03-07",
+      "kickoff": "15:30",
+      "venueId": "",
+      "homeTeamId": "team-1003",
+      "awayTeamId": "team-1006",
+      "status": "已赛",
+      "homeGoals": 3,
+      "awayGoals": 1,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-04",
+      "round": 1,
+      "date": "2026-03-07",
+      "kickoff": "19:30",
+      "venueId": "venue-2004",
+      "homeTeamId": "team-1005",
+      "awayTeamId": "team-1004",
+      "status": "已赛",
+      "homeGoals": 0,
+      "awayGoals": 2,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-05",
+      "round": 2,
+      "date": "2026-03-14",
+      "kickoff": "15:30",
+      "venueId": "",
+      "homeTeamId": "team-1001",
+      "awayTeamId": "team-1007",
+      "status": "已赛",
+      "homeGoals": 1,
+      "awayGoals": 2,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-06",
+      "round": 2,
+      "date": "2026-03-14",
+      "kickoff": "19:30",
+      "venueId": "",
+      "homeTeamId": "team-1006",
+      "awayTeamId": "team-1008",
+      "status": "已赛",
+      "homeGoals": 2,
+      "awayGoals": 2,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-07",
+      "round": 2,
+      "date": "2026-03-14",
+      "kickoff": "15:30",
+      "venueId": "",
+      "homeTeamId": "team-1002",
+      "awayTeamId": "team-1005",
+      "status": "已赛",
+      "homeGoals": 0,
+      "awayGoals": 0,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-08",
+      "round": 2,
+      "date": "2026-03-14",
+      "kickoff": "19:30",
+      "venueId": "venue-2004",
+      "homeTeamId": "team-1004",
+      "awayTeamId": "team-1003",
+      "status": "已赛",
+      "homeGoals": 4,
+      "awayGoals": 1,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-09",
+      "round": 3,
+      "date": "2026-03-21",
+      "kickoff": "15:30",
+      "venueId": "",
+      "homeTeamId": "team-1001",
+      "awayTeamId": "team-1006",
+      "status": "已赛",
+      "homeGoals": 2,
+      "awayGoals": 1,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-10",
+      "round": 3,
+      "date": "2026-03-21",
+      "kickoff": "19:30",
+      "venueId": "",
+      "homeTeamId": "team-1005",
+      "awayTeamId": "team-1007",
+      "status": "已赛",
+      "homeGoals": 1,
+      "awayGoals": 0,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-11",
+      "round": 3,
+      "date": "2026-03-21",
+      "kickoff": "15:30",
+      "venueId": "",
+      "homeTeamId": "team-1008",
+      "awayTeamId": "team-1004",
+      "status": "已赛",
+      "homeGoals": 1,
+      "awayGoals": 3,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-12",
+      "round": 3,
+      "date": "2026-03-21",
+      "kickoff": "19:30",
+      "venueId": "venue-2004",
+      "homeTeamId": "team-1003",
+      "awayTeamId": "team-1002",
+      "status": "已赛",
+      "homeGoals": 2,
+      "awayGoals": 0,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-13",
+      "round": 4,
+      "date": "2026-03-28",
+      "kickoff": "15:30",
+      "venueId": "",
+      "homeTeamId": "team-1001",
+      "awayTeamId": "team-1005",
+      "status": "待赛",
+      "homeGoals": null,
+      "awayGoals": null,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-14",
+      "round": 4,
+      "date": "2026-03-28",
+      "kickoff": "19:30",
+      "venueId": "",
+      "homeTeamId": "team-1004",
+      "awayTeamId": "team-1006",
+      "status": "延期",
+      "homeGoals": null,
+      "awayGoals": null,
+      "note": "主队场地检修，日期待定",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-15",
+      "round": 4,
+      "date": "2026-03-28",
+      "kickoff": "15:30",
+      "venueId": "",
+      "homeTeamId": "team-1007",
+      "awayTeamId": "team-1003",
+      "status": "待赛",
+      "homeGoals": null,
+      "awayGoals": null,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-16",
+      "round": 4,
+      "date": "2026-03-28",
+      "kickoff": "19:30",
+      "venueId": "venue-2004",
+      "homeTeamId": "team-1002",
+      "awayTeamId": "team-1008",
+      "status": "待赛",
+      "homeGoals": null,
+      "awayGoals": null,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-17",
+      "round": 5,
+      "date": "2026-04-04",
+      "kickoff": "15:30",
+      "venueId": "",
+      "homeTeamId": "team-1001",
+      "awayTeamId": "team-1004",
+      "status": "待赛",
+      "homeGoals": null,
+      "awayGoals": null,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-18",
+      "round": 5,
+      "date": "2026-04-04",
+      "kickoff": "19:30",
+      "venueId": "",
+      "homeTeamId": "team-1003",
+      "awayTeamId": "team-1005",
+      "status": "待赛",
+      "homeGoals": null,
+      "awayGoals": null,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-19",
+      "round": 5,
+      "date": "2026-04-04",
+      "kickoff": "15:30",
+      "venueId": "",
+      "homeTeamId": "team-1006",
+      "awayTeamId": "team-1002",
+      "status": "待赛",
+      "homeGoals": null,
+      "awayGoals": null,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-20",
+      "round": 5,
+      "date": "2026-04-04",
+      "kickoff": "19:30",
+      "venueId": "venue-2004",
+      "homeTeamId": "team-1008",
+      "awayTeamId": "team-1007",
+      "status": "待赛",
+      "homeGoals": null,
+      "awayGoals": null,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-21",
+      "round": 6,
+      "date": "2026-04-11",
+      "kickoff": "15:30",
+      "venueId": "",
+      "homeTeamId": "team-1001",
+      "awayTeamId": "team-1003",
+      "status": "待赛",
+      "homeGoals": null,
+      "awayGoals": null,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-22",
+      "round": 6,
+      "date": "2026-04-11",
+      "kickoff": "19:30",
+      "venueId": "",
+      "homeTeamId": "team-1002",
+      "awayTeamId": "team-1004",
+      "status": "待赛",
+      "homeGoals": null,
+      "awayGoals": null,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-23",
+      "round": 6,
+      "date": "2026-04-11",
+      "kickoff": "15:30",
+      "venueId": "",
+      "homeTeamId": "team-1005",
+      "awayTeamId": "team-1008",
+      "status": "待赛",
+      "homeGoals": null,
+      "awayGoals": null,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-24",
+      "round": 6,
+      "date": "2026-04-11",
+      "kickoff": "19:30",
+      "venueId": "venue-2004",
+      "homeTeamId": "team-1007",
+      "awayTeamId": "team-1006",
+      "status": "待赛",
+      "homeGoals": null,
+      "awayGoals": null,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-25",
+      "round": 7,
+      "date": "2026-04-18",
+      "kickoff": "15:30",
+      "venueId": "",
+      "homeTeamId": "team-1001",
+      "awayTeamId": "team-1002",
+      "status": "待赛",
+      "homeGoals": null,
+      "awayGoals": null,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-26",
+      "round": 7,
+      "date": "2026-04-18",
+      "kickoff": "19:30",
+      "venueId": "",
+      "homeTeamId": "team-1008",
+      "awayTeamId": "team-1003",
+      "status": "待赛",
+      "homeGoals": null,
+      "awayGoals": null,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-27",
+      "round": 7,
+      "date": "2026-04-18",
+      "kickoff": "15:30",
+      "venueId": "",
+      "homeTeamId": "team-1004",
+      "awayTeamId": "team-1007",
+      "status": "待赛",
+      "homeGoals": null,
+      "awayGoals": null,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "match-3001-28",
+      "round": 7,
+      "date": "2026-04-18",
+      "kickoff": "19:30",
+      "venueId": "venue-2004",
+      "homeTeamId": "team-1006",
+      "awayTeamId": "team-1005",
+      "status": "待赛",
+      "homeGoals": null,
+      "awayGoals": null,
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    }
+  ],
+  "referees": [
+    {
+      "id": "ref-4001",
+      "name": "陈一帆",
+      "level": "国家级",
+      "status": "在册",
+      "note": "足协推荐",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "ref-4002",
+      "name": "王砚秋",
+      "level": "国家级",
+      "status": "在册",
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "ref-4003",
+      "name": "李慕白",
+      "level": "国家级",
+      "status": "在册",
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "ref-4004",
+      "name": "周谨",
+      "level": "一级",
+      "status": "在册",
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "ref-4005",
+      "name": "吴望",
+      "level": "一级",
+      "status": "在册",
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "ref-4006",
+      "name": "郑回",
+      "level": "一级",
+      "status": "在册",
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "ref-4007",
+      "name": "孙照",
+      "level": "一级",
+      "status": "在册",
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "ref-4008",
+      "name": "赵启",
+      "level": "一级",
+      "status": "在册",
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "ref-4009",
+      "name": "钱进",
+      "level": "一级",
+      "status": "在册",
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "ref-4010",
+      "name": "冯远",
+      "level": "二级",
+      "status": "在册",
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "ref-4011",
+      "name": "褚亮",
+      "level": "二级",
+      "status": "在册",
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "ref-4012",
+      "name": "卫澜",
+      "level": "二级",
+      "status": "在册",
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "ref-4013",
+      "name": "蒋松",
+      "level": "二级",
+      "status": "在册",
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "ref-4014",
+      "name": "韩江",
+      "level": "二级",
+      "status": "在册",
+      "note": "",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    }
+  ],
+  "assignments": [
+    {
+      "id": "assign-5001-01",
+      "matchId": "match-3001-01",
+      "role": "主裁",
+      "refereeId": "ref-4001",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-02",
+      "matchId": "match-3001-01",
+      "role": "助理",
+      "refereeId": "ref-4005",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-03",
+      "matchId": "match-3001-01",
+      "role": "助理",
+      "refereeId": "ref-4006",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-04",
+      "matchId": "match-3001-02",
+      "role": "主裁",
+      "refereeId": "ref-4002",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-05",
+      "matchId": "match-3001-02",
+      "role": "助理",
+      "refereeId": "ref-4007",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-06",
+      "matchId": "match-3001-02",
+      "role": "助理",
+      "refereeId": "ref-4008",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-07",
+      "matchId": "match-3001-03",
+      "role": "主裁",
+      "refereeId": "ref-4003",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-08",
+      "matchId": "match-3001-03",
+      "role": "助理",
+      "refereeId": "ref-4009",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-09",
+      "matchId": "match-3001-03",
+      "role": "助理",
+      "refereeId": "ref-4010",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-10",
+      "matchId": "match-3001-04",
+      "role": "主裁",
+      "refereeId": "ref-4004",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-11",
+      "matchId": "match-3001-04",
+      "role": "助理",
+      "refereeId": "ref-4011",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-12",
+      "matchId": "match-3001-04",
+      "role": "助理",
+      "refereeId": "ref-4012",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-13",
+      "matchId": "match-3001-05",
+      "role": "主裁",
+      "refereeId": "ref-4002",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-14",
+      "matchId": "match-3001-05",
+      "role": "助理",
+      "refereeId": "ref-4006",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-15",
+      "matchId": "match-3001-05",
+      "role": "助理",
+      "refereeId": "ref-4007",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-16",
+      "matchId": "match-3001-06",
+      "role": "主裁",
+      "refereeId": "ref-4003",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-17",
+      "matchId": "match-3001-06",
+      "role": "助理",
+      "refereeId": "ref-4008",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-18",
+      "matchId": "match-3001-06",
+      "role": "助理",
+      "refereeId": "ref-4009",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-19",
+      "matchId": "match-3001-07",
+      "role": "主裁",
+      "refereeId": "ref-4004",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-20",
+      "matchId": "match-3001-07",
+      "role": "助理",
+      "refereeId": "ref-4010",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-21",
+      "matchId": "match-3001-07",
+      "role": "助理",
+      "refereeId": "ref-4011",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-22",
+      "matchId": "match-3001-08",
+      "role": "主裁",
+      "refereeId": "ref-4005",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-23",
+      "matchId": "match-3001-08",
+      "role": "助理",
+      "refereeId": "ref-4012",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-24",
+      "matchId": "match-3001-08",
+      "role": "助理",
+      "refereeId": "ref-4013",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-25",
+      "matchId": "match-3001-09",
+      "role": "主裁",
+      "refereeId": "ref-4003",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-26",
+      "matchId": "match-3001-09",
+      "role": "助理",
+      "refereeId": "ref-4007",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-27",
+      "matchId": "match-3001-09",
+      "role": "助理",
+      "refereeId": "ref-4008",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-28",
+      "matchId": "match-3001-10",
+      "role": "主裁",
+      "refereeId": "ref-4004",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-29",
+      "matchId": "match-3001-10",
+      "role": "助理",
+      "refereeId": "ref-4009",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-30",
+      "matchId": "match-3001-10",
+      "role": "助理",
+      "refereeId": "ref-4010",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-31",
+      "matchId": "match-3001-11",
+      "role": "主裁",
+      "refereeId": "ref-4005",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-32",
+      "matchId": "match-3001-11",
+      "role": "助理",
+      "refereeId": "ref-4011",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-33",
+      "matchId": "match-3001-11",
+      "role": "助理",
+      "refereeId": "ref-4012",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-34",
+      "matchId": "match-3001-12",
+      "role": "主裁",
+      "refereeId": "ref-4006",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-35",
+      "matchId": "match-3001-12",
+      "role": "助理",
+      "refereeId": "ref-4013",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-36",
+      "matchId": "match-3001-12",
+      "role": "助理",
+      "refereeId": "ref-4014",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-37",
+      "matchId": "match-3001-13",
+      "role": "主裁",
+      "refereeId": "ref-4001",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-38",
+      "matchId": "match-3001-13",
+      "role": "助理",
+      "refereeId": "ref-4004",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-39",
+      "matchId": "match-3001-13",
+      "role": "助理",
+      "refereeId": "ref-4010",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-40",
+      "matchId": "match-3001-14",
+      "role": "主裁",
+      "refereeId": "ref-4002",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-41",
+      "matchId": "match-3001-15",
+      "role": "主裁",
+      "refereeId": "ref-4003",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-42",
+      "matchId": "match-3001-15",
+      "role": "助理",
+      "refereeId": "ref-4005",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-43",
+      "matchId": "match-3001-15",
+      "role": "助理",
+      "refereeId": "ref-4011",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-44",
+      "matchId": "match-3001-16",
+      "role": "主裁",
+      "refereeId": "ref-4006",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-45",
+      "matchId": "match-3001-16",
+      "role": "助理",
+      "refereeId": "ref-4007",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "assign-5001-46",
+      "matchId": "match-3001-16",
+      "role": "助理",
+      "refereeId": "ref-4012",
+      "createdAt": "2026-02-20T02:00:00.000Z",
+      "updatedAt": "2026-02-20T02:00:00.000Z"
+    },
+    {
+      "id": "bee0cc21-126f-4a90-b9e0-38ce2474f983",
+      "matchId": "match-3001-17",
+      "role": "主裁",
+      "refereeId": "ref-4010",
+      "createdAt": "2026-09-22T13:31:42.390Z",
+      "updatedAt": "2026-09-22T13:31:42.390Z"
+    },
+    {
+      "id": "34052264-eb3c-438a-ad78-fc9e3b0337db",
+      "matchId": "match-3001-17",
+      "role": "助理",
+      "refereeId": "ref-4005",
+      "createdAt": "2026-09-22T13:31:42.390Z",
+      "updatedAt": "2026-09-22T13:31:42.390Z"
+    },
+    {
+      "id": "6c0e0e5c-1229-4174-9cfe-68cde9745515",
+      "matchId": "match-3001-17",
+      "role": "助理",
+      "refereeId": "ref-4006",
+      "createdAt": "2026-09-22T13:31:42.390Z",
+      "updatedAt": "2026-09-22T13:31:42.390Z"
+    }
+  ],
+  "assignmentLogs": [
+    {
+      "id": "24008a60-19ea-4c41-950a-78fc1eac9c8f",
+      "kind": "派场",
+      "matchId": "match-3001-17",
+      "matchLabel": "第 5 轮 2026-04-04 15:30 江城铁马 vs 平原飞驰",
+      "role": "主裁",
+      "fromRefereeId": "",
+      "fromName": "",
+      "toRefereeId": "ref-4010",
+      "toName": "冯远",
+      "reason": "123",
+      "operator": "",
+      "at": "2026-09-22T13:31:42.390Z"
+    },
+    {
+      "id": "fa7506dc-7335-41e8-b6cb-c20aa9475249",
+      "kind": "派场",
+      "matchId": "match-3001-17",
+      "matchLabel": "第 5 轮 2026-04-04 15:30 江城铁马 vs 平原飞驰",
+      "role": "助理",
+      "fromRefereeId": "",
+      "fromName": "",
+      "toRefereeId": "ref-4005",
+      "toName": "吴望",
+      "reason": "123",
+      "operator": "",
+      "at": "2026-09-22T13:31:42.390Z"
+    },
+    {
+      "id": "28b35987-93c3-432d-93c2-b432bc3f37f0",
+      "kind": "派场",
+      "matchId": "match-3001-17",
+      "matchLabel": "第 5 轮 2026-04-04 15:30 江城铁马 vs 平原飞驰",
+      "role": "助理",
+      "fromRefereeId": "",
+      "fromName": "",
+      "toRefereeId": "ref-4006",
+      "toName": "郑回",
+      "reason": "123",
+      "operator": "",
+      "at": "2026-09-22T13:31:42.390Z"
+    }
+  ]
+}

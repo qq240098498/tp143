@@ -4,6 +4,8 @@ const { load } = require('./store');
 const teams = require('./teams');
 const venues = require('./venues');
 const matches = require('./matches');
+const referees = require('./referees');
+const assignments = require('./assignments');
 const { computeTable } = require('./standings');
 
 function readQuery(query, name) {
@@ -57,4 +59,10 @@ module.exports = {
   ...teams,
   ...venues,
   ...matches,
+  ...referees,
+  listAssignmentBoard: assignments.listBoard,
+  assignMatch: assignments.assignMatch,
+  reassignSlot: assignments.reassignSlot,
+  refereeSchedule: assignments.refereeSchedule,
+  listAssignmentLogs: assignments.listLogs,
 };
